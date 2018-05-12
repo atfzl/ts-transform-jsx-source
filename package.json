@@ -4,6 +4,7 @@
   "description":
     "Adds source file, line number and column number to JSX elements",
   "main": "dist/index.js",
+  "typings": "dist/index.d.ts",
   "repository": "git@github.com:atfzl/ts-transform-jsx-source.git",
   "author": "Atif Afzal <atif5801@gmail.com>",
   "license": "MIT",
