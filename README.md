@@ -26,4 +26,36 @@ Out
 
 ## Installation
 
-yarn add -D typescript-plugin-transform-react-jsx-source
+```
+yarn add -D ts-transform-react-jsx-source
+```
+
+## Usage
+
+#### Webpack
+
+```js
+// ...
+{
+  loader: "awesome-typescript-loader",
+  options: {
+    getCustomTransformers: () => ({ before: [tsxSourceTransformer] })
+  }
+}
+// ...
+```
+
+#### Fusebox
+
+```js
+import tsTranformJsxSource from 'ts-transform-jsx-source';
+
+const fuse = FuseBox.init({
+  homeDir: 'src/',
+  target: 'browser@es6',
+  output: 'dist/$name.js',
+  transformers: {
+    before: [tsTranformJsxSource],
+  },
+});
+```
