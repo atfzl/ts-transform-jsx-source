@@ -1,4 +1,4 @@
-# ts-transform-react-jsx-source
+# ts-transform-jsx-source
 
 Adds source file, line number and column number to JSX elements.
 
@@ -15,7 +15,7 @@ Out
 ```js
 <sometag
   __source={{
-    fileName: 'this/file.tsx',
+    fileName: 'thisFile.tsx',
     lineNumber: 20,
     columnNumber: 11,
   }}
@@ -27,7 +27,7 @@ Out
 ## Installation
 
 ```
-yarn add -D ts-transform-react-jsx-source
+yarn add -D ts-transform-jsx-source
 ```
 
 ## Usage
@@ -35,11 +35,13 @@ yarn add -D ts-transform-react-jsx-source
 #### Webpack
 
 ```js
+import tsTranformJsxSource from 'ts-transform-jsx-source';
+
 // ...
 {
   loader: "awesome-typescript-loader",
   options: {
-    getCustomTransformers: () => ({ before: [tsxSourceTransformer] })
+    getCustomTransformers: () => ({ before: [tsTranformJsxSource] })
   }
 }
 // ...

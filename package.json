@@ -1,10 +1,10 @@
 {
-  "name": "ts-transform-react-jsx-source",
+  "name": "ts-transform-jsx-source",
   "version": "1.0.0",
   "description":
     "Adds source file, line number and column number to JSX elements",
   "main": "dist/index.js",
-  "repository": "git@github.com:atfzl/ts-transform-react-jsx-source.git",
+  "repository": "git@github.com:atfzl/ts-transform-jsx-source.git",
   "author": "Atif Afzal <atif5801@gmail.com>",
   "license": "MIT",
   "dependencies": {
