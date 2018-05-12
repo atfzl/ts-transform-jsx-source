@@ -15,7 +15,7 @@ Out
 ```js
 <sometag
   __source={{
-    fileName: 'thisFile.tsx',
+    fileName: '/Users/me/proj/src/thisFile.tsx',
     lineNumber: 20,
     columnNumber: 11,
   }}
