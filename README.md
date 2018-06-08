@@ -32,6 +32,8 @@ yarn add -D ts-transform-jsx-source
 
 ## Usage
 
+foo
+
 #### Webpack
 
 ```js
