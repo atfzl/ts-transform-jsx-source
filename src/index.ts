@@ -65,6 +65,7 @@ const transformer: ts.TransformerFactory<ts.SourceFile> = context => {
         const result = ts.updateJsxOpeningElement(
           node,
           node.tagName,
+          node.typeArguments,
           ts.createJsxAttributes(attributes)
         );
 
@@ -78,6 +79,7 @@ const transformer: ts.TransformerFactory<ts.SourceFile> = context => {
         const result = ts.updateJsxSelfClosingElement(
           node,
           node.tagName,
+          node.typeArguments,
           ts.createJsxAttributes(attributes)
         );
 

@@ -1,6 +1,6 @@
 {
   "name": "ts-transform-jsx-source",
-  "version": "1.0.3",
+  "version": "1.1.0",
   "description":
     "Adds source file, line number and column number to JSX elements",
   "main": "dist/index.js",
@@ -9,7 +9,7 @@
   "author": "Atif Afzal <atif5801@gmail.com>",
   "license": "MIT",
   "peerDependencies": {
-    "typescript": "2.8.x"
+    "typescript": "2.9.x"
   },
   "devDependencies": {
     "prettier": "^1.12.1",
