@@ -1,6 +1,6 @@
 {
   "name": "ts-transform-jsx-source",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "description":
     "Adds source file, line number and column number to JSX elements",
   "main": "dist/index.js",

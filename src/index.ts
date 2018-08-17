@@ -1,12 +1,12 @@
 import * as ts from 'typescript';
 
 const getUpdatedAttributesWithSource = (
-  node: ts.JsxSelfClosingElement | ts.JsxOpeningElement
+  node: ts.JsxSelfClosingElement | ts.JsxOpeningElement,
 ): ts.JsxAttributeLike[] => {
   const file = node.getSourceFile();
 
   const { line, character } = file.getLineAndCharacterOfPosition(
-    node.getStart()
+    node.getStart(),
   );
 
   const fileName = file.fileName;
@@ -16,6 +16,7 @@ const getUpdatedAttributesWithSource = (
    */
   const lineNumber = line + 1;
   const columnNumber = character + 1;
+  const tagName = node.tagName.getText();
 
   const newAttributes: ts.JsxAttributeLike[] = [];
 
@@ -33,18 +34,22 @@ const getUpdatedAttributesWithSource = (
       ts.createObjectLiteral([
         ts.createPropertyAssignment(
           ts.createLiteral('fileName'),
-          ts.createLiteral(fileName)
+          ts.createLiteral(fileName),
         ),
         ts.createPropertyAssignment(
           ts.createLiteral('lineNumber'),
-          ts.createLiteral(lineNumber)
+          ts.createLiteral(lineNumber),
         ),
         ts.createPropertyAssignment(
           ts.createLiteral('columnNumber'),
-          ts.createLiteral(columnNumber)
-        )
-      ])
-    )
+          ts.createLiteral(columnNumber),
+        ),
+        ts.createPropertyAssignment(
+          ts.createLiteral('tagName'),
+          ts.createLiteral(tagName),
+        ),
+      ]),
+    ),
   );
 
   /**
@@ -66,7 +71,7 @@ const transformer: ts.TransformerFactory<ts.SourceFile> = context => {
           node,
           node.tagName,
           node.typeArguments,
-          ts.createJsxAttributes(attributes)
+          ts.createJsxAttributes(attributes),
         );
 
         return result;
@@ -80,7 +85,7 @@ const transformer: ts.TransformerFactory<ts.SourceFile> = context => {
           node,
           node.tagName,
           node.typeArguments,
-          ts.createJsxAttributes(attributes)
+          ts.createJsxAttributes(attributes),
         );
 
         return result;
