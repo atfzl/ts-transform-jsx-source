@@ -74,7 +74,7 @@ const transformer: ts.TransformerFactory<ts.SourceFile> = context => {
           ts.createJsxAttributes(attributes),
         );
 
-        return result;
+        return ts.visitEachChild(result, visitor, context);
       }
 
       case ts.SyntaxKind.JsxSelfClosingElement: {
@@ -88,7 +88,7 @@ const transformer: ts.TransformerFactory<ts.SourceFile> = context => {
           ts.createJsxAttributes(attributes),
         );
 
-        return result;
+        return ts.visitEachChild(result, visitor, context);
       }
     }
 
