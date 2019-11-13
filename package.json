@@ -12,7 +12,7 @@
     "prepublish": "tsc"
   },
   "peerDependencies": {
-    "typescript": "2.9.x"
+    "typescript": "3"
   },
   "devDependencies": {
     "prettier": "^1.12.1",
